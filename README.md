@@ -20,7 +20,9 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [ ] UI/UX improvements
+* [ ] Custom adapter to improve style of to do items
+* [ ] Ability to reorder items
 
 ## Video Walkthrough
 
