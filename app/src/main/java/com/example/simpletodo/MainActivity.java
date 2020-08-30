@@ -3,6 +3,7 @@ package com.example.simpletodo;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,8 +13,10 @@ import org.apache.commons.io.FileUtils;
 
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.nio.charset.Charset;
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<String> items;
 
+    RelativeLayout plusButton;
     Button addButton;
     EditText editItem;
     RecyclerView listItem;
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        plusButton = findViewById(R.id.adBtn);
         addButton = findViewById(R.id.addButton);
         editItem = findViewById(R.id.editItem);
         listItem = findViewById(R.id.listItem);
@@ -78,6 +83,20 @@ public class MainActivity extends AppCompatActivity {
         listItem.setAdapter(itemsAdapter);
         listItem.setLayoutManager(new LinearLayoutManager(this));
 
+
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editItem.setVisibility(View.VISIBLE);
+                addButton.setVisibility(View.VISIBLE);
+                editItem.requestFocus();
+                editItem.setFocusableInTouchMode(true);
+                InputMethodManager imm = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(editItem, InputMethodManager.SHOW_IMPLICIT);
+            }
+        });
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Item was added", Toast.LENGTH_SHORT).show();
                 saveItems();
+
+                editItem.setVisibility(View.GONE);
+                addButton.setVisibility(View.GONE);
+                hideKeyboard(editItem);
             }
         });
 
@@ -137,5 +160,15 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("MainActivity", "error writing items", e);
         }
+    }
+
+    private void onBackPress() {
+        editItem.setVisibility(View.GONE);
+        addButton.setVisibility(View.GONE);
+    }
+
+    private void hideKeyboard(View v) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 }
