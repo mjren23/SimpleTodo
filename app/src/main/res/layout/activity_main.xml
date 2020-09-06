@@ -32,20 +32,27 @@
         android:hint="Add an item here"
         android:inputType="text" />
 
+    <TextView
+        android:id="@+id/listName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your To-Do List"
+        android:layout_centerHorizontal="true"
+        android:textSize="24dp"
+        android:layout_marginTop="20dp" />
+
     <FrameLayout
+        android:id="@+id/frameLyt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top" >
+        android:layout_gravity="top"
+        android:layout_below="@id/listName">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="70dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:padding="10dp"
+            android:layout_margin="20dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp" >
 
@@ -61,22 +68,40 @@
 
         </androidx.cardview.widget.CardView>
 
-        <RelativeLayout
-            android:id="@+id/adBtn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center_horizontal|bottom"
-            android:background="@drawable/round_button">
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/adBtn"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_gravity="center_horizontal|bottom"-->
+<!--            android:background="@drawable/round_button">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="+"
-                android:textColor="@android:color/white"
-                android:textSize="35sp"/>
-        </RelativeLayout>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:text="+"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="35sp"/>-->
+<!--        </RelativeLayout>-->
     </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/adBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="+"
+            android:textColor="@android:color/white"
+            android:textSize="35sp"/>
+    </RelativeLayout>
 
 
 </RelativeLayout>

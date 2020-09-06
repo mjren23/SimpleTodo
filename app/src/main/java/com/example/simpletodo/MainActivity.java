@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("MainActivity", "test");
 
         plusButton = findViewById(R.id.adBtn);
         addButton = findViewById(R.id.addButton);
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 InputMethodManager imm = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.showSoftInput(editItem, InputMethodManager.SHOW_IMPLICIT);
+                plusButton.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -170,5 +172,6 @@ public class MainActivity extends AppCompatActivity {
     private void hideKeyboard(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        plusButton.setVisibility(View.VISIBLE);
     }
 }
