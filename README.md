@@ -4,7 +4,7 @@
 
 Submitted by: **Megan Ren**
 
-Time spent: **3.5** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] UI/UX improvements
+* [x] UI/UX improvements
 * [ ] Custom adapter to improve style of to do items
 * [ ] Ability to reorder items
 
