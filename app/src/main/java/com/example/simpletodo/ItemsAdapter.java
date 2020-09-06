@@ -2,6 +2,8 @@ package com.example.simpletodo;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
 
+
     public interface OnLongClickListener {
         void onItemLongClicked(int position);
     }
@@ -18,6 +21,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     public interface OnClickListener {
         void onItemClicked(int position);
     }
+
 
     List<String> items;
     OnClickListener clickListener;
@@ -47,6 +51,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         viewHolder.bind(item);
 
     }
+
+
 
     @Override
     // Tells the RV how many items are in the list

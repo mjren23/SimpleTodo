@@ -164,10 +164,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void onBackPress() {
+    @Override
+    public void onBackPressed() {
         editItem.setVisibility(View.GONE);
         addButton.setVisibility(View.GONE);
     }
+    
 
     private void hideKeyboard(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
