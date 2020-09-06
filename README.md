@@ -35,6 +35,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Needed to import <code>org.apache.commons.io.FileUtils</code> instead of <code>android.os.FileUtils</code> while implementing persistence. 
+Issues with forcing soft input (keyboard) to open on certain actions.
 
 ## License
 
