@@ -28,9 +28,15 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+updated app: 
+
+<img src='updatedwalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough of app' />
+
+original app:
+
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough of app' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
@@ -39,7 +45,7 @@ Issues with forcing soft input (keyboard) to open on certain actions.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2020] [Megan Ren]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
