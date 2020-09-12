@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.apache.commons.io.FileUtils;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -103,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String todoItem = editItem.getText().toString();
+                // check if empty
+                if (TextUtils.isEmpty(todoItem)) {
+                    Toast.makeText(getApplicationContext(), "Cannot add an empty item", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 // Add item to model
                 items.add(todoItem);
                 // Notify adapter that an item is inserted
