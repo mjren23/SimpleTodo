@@ -4,7 +4,7 @@
 
 Submitted by: **Megan Ren**
 
-Time spent: **4** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
@@ -21,12 +21,17 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] UI/UX improvements
+* [x] Support to add completion dates to items
 * [ ] Custom adapter to improve style of to do items
 * [ ] Ability to reorder items
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
+app with date support added:
+
+<img src='walkthrough3.gif' title='Updated Walkthrough' width='' alt='Video Walkthrough of app' />
 
 updated app: 
 
