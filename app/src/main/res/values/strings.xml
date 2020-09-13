@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleTodo</string>
+    <string name="set_date">Set date</string>
 </resources>
